@@ -1,0 +1,7 @@
+{
+  "name": "polymerfire-config",
+  "main": "polymerfire-config.html",
+  "devDependencies": {
+    "polymerfire": "firebase/polymerfire#^2.0.1"
+  }
+}
