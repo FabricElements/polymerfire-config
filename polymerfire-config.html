@@ -1,4 +1,28 @@
 <link rel="import" href="../polymerfire/polymerfire.html">
 <link rel="preload" as="script" href="/__/firebase/init.js">
-<script src="./init.js"></script>
-<script src="./firestore-persistence.js"></script>
+<script>
+  /* eslint-disable quotes,max-len */
+  (function() {
+    "use strict";
+    if (typeof firebase === 'undefined') {
+      throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before firebase-init.html');
+    }
+    let script = document.createElement('script');
+    // script.async = true;
+    script.src = '/__/firebase/init.js';
+    script.onload = onload;
+    document.head.appendChild(script);
+
+    // Enable firestore persistence
+    setTimeout(() => {
+      firebase.firestore().enablePersistence()
+        .catch(function(err) {
+          if (err.code === 'failed-precondition') {
+            throw new Error('Multiple tabs open, persistence can only be enabled in one tab at a a time.');
+          } else if (err.code === 'unimplemented') {
+            throw new Error('The current browser does not support all of the features required to enable persistence');
+          }
+        });
+    }, 100);
+  })();
+</script>
