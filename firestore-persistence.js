@@ -12,5 +12,5 @@
           throw new Error('The current browser does not support all of the features required to enable persistence');
         }
       });
-  }, 1000);
+  }, 100);
 })();
