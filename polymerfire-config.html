@@ -5,14 +5,13 @@
 <link rel="import" href="../polymerfire/firebase-storage-script.html">
 <link rel="import" href="../polymerfire/firebase-messaging-script.html">
 <link rel="import" href="../polymerfire/firebase-firestore-script.html">
-<link rel="import" href="../polymerfire/firebase-functions-script.html">
+<!--<link rel="import" href="../polymerfire/firebase-functions-script.html">-->
 <script>
   /* eslint-disable quotes,max-len */
-  "use strict";
-  const firebase = window.firebase;
+  'use strict';
   if (typeof firebase === 'undefined') {
     throw new Error('hosting/init-error: Firebase SDK not detected.');
-  }¬
+  }
   let script = document.createElement('script');
   // script.async = true;
   script.src = '/__/firebase/init.js';

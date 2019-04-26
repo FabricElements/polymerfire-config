@@ -1,7 +1,8 @@
 {
   "name": "polymerfire-config",
+  "version": "0.0.2",
   "main": "polymerfire-config.html",
   "devDependencies": {
-    "polymerfire": "firebase/polymerfire#master"
+    "polymerfire": "git@github.com:firebase/polymerfire.git#2.0-preview"
   }
 }
